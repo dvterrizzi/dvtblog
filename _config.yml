@@ -2,5 +2,8 @@ title: www.dvt.life
 repository: dvterrizzi/www.dvt.life
 url: https://www.dvt.life
 baseurl: ""
+theme: null # If ommitted, the github-pages gem will build a normalize.scss into styles.scss
+sass:
+  sass_dir: _sass
 plugins:
   - jekyll-sitemap

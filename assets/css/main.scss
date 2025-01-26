@@ -1,0 +1,18 @@
+---
+# This file will be picked up when running 'jekyll [build|serve]'
+#
+# It runs this file (main.scss) through DartSass compiler, which
+# will scan the default _sass folder for partials and build those first.
+#
+---
+
+@use "fonts" as fonts;
+@use "colors" as colors;
+
+body {
+    background-color: colors.$color-bg;
+}
+
+.current {
+    color: green;
+}
