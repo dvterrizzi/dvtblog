@@ -1,2 +1,6 @@
+title: www.dvt.life
+repository: dvterrizzi/www.dvt.life
+url: https://www.dvt.life
+baseurl: **
 plugins:
   - jekyll-sitemap
