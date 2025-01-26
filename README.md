@@ -1,2 +1,2 @@
-# dvtblog
-Static blog website
+# www.dvt.life
+My place on the web
