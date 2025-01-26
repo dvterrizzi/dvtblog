@@ -12,7 +12,14 @@ Apparently there is a `github-pages` gem which wraps the `jekyll` gem with a cou
 
 The only way to get GitHub Actions to build the repo when using the (now unused) `github-pages` gem, is by removing the `Gemfile.lock` file from the repo and adding it to `.gitignore`. This file is created when running `bundle` from the CLI to install the gems.
 
-TODO: Get the repo building on my Mac.
+I managed to get GitHub Actions to build using the `jekyll` while leaving the `Gemfile.lock` file in the repo by deleting the file and re-creating it using the following commands.
+
+`bundle` 
+`bundle lock --add-platform x86_64-linus`
+`bundle lock --normalize-platforms`
+
+### TODO
+- Get the repo building on my Mac.
 
 ### SCSS
 Using `@import "partial"` has been deprecated and partials should instead be imported using `@use` where they are assigned a namespace to prevent conflicting variable names. The global namespace `*` can also be used, but is not advised. 
