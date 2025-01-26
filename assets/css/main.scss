@@ -1,18 +1,43 @@
----
-# This file will be picked up when running 'jekyll [build|serve]'
-#
-# It runs this file (main.scss) through DartSass compiler, which
-# will scan the default _sass folder for partials and build those first.
-#
+--- 
+# Front matter must be present in this file in order for Jekyll to detect it 
 ---
 
-@use "fonts" as fonts;
-@use "colors" as colors;
+@use "globals" as globals;
 
 body {
-    background-color: colors.$color-bg;
-}
+    display: flex;
+    flex-direction: column;
 
-.current {
-    color: green;
+    font-family: globals.$font-stack;
+    background-color: globals.$bg;
+    color: globals.$color-main;
+
+    padding: globals.$spacing clamp(calc(globals.$spacing / 2), 5vw, calc(globals.$spacing * 3));
+
+    main,
+    header,
+    footer {
+        max-width: 60vw;
+        margin-inline: auto;
+    }
+
+    header {
+        h1 {
+            text-align: center;
+        }
+        nav {
+            .current {
+                color: green;
+            }
+        }
+    }
+
+    a {
+        color: globals.$color-link;
+
+        &:hover {
+            color: red;
+        }
+    }
+
 }

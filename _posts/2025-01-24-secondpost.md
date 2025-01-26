@@ -1,5 +1,6 @@
 ---
 title: My second post
+layout: post
 author: dvt
 ---
 
