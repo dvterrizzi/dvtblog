@@ -1,9 +1,7 @@
 # Introduction<a name="intro"></a>
 Repository for my personal website at https://www.dvt.life
 
-# Table of contents
 - [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Build](#build)
   - [Gemfile](#gemfile)
   - [SCSS](#scss)
