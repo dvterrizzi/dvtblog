@@ -12,9 +12,6 @@ jobs:
       matrix:
         node-version: ['22.13.1']
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
     - uses: actions/checkout@v4
@@ -40,6 +37,10 @@ jobs:
     needs: build-and-upload
 
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     permissions:
       pages: write # to deploy to Pages
