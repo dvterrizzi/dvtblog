@@ -11,23 +11,25 @@ jobs:
     strategy:
       matrix:
         node-version: ['22.13.1']
-
-
     steps:
     - uses: actions/checkout@v4
 
+      # Set up node
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: npm
 
+      # Install npm packages
     - name: Install dependencies
       run: npm ci
 
+      # Invoke npm run build:prod to build Eleventy + SCSS
     - name: Build (11ty + scss)
       run: npm run build:prod
 
+      # Upload output folder _site as build artifact
     - name: Upload static files as artifact
       uses: actions/upload-pages-artifact@v3
       with:
@@ -46,6 +48,7 @@ jobs:
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
 
+    # Deploy the previously built build artifact to GitHub Pages
     steps:
     - name: Deploy to gh-pages
       uses: actions/deploy-pages@v4
