@@ -6,11 +6,9 @@
     "build:sass": "sass src/static/scss/main.scss _site/static/css/main.css",
     "build:sass:prod": "sass src/static/scss/main.scss _site/static/css/main.css --style compressed",
     "watch:sass": "sass src/static/scss/main.scss _site/static/css/main.css --watch",
-
-    "build:eleventy": "ELEVENTY_ENV=development eleventy",
-    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+    "build:eleventy": "cross-env ELEVENTY_ENV=development eleventy",
+    "build:eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
     "watch:eleventy": "eleventy --serve",
-
     "build": "npm run build:eleventy & npm run build:sass",
     "build:prod": "npm run build:eleventy:prod & npm run build:sass:prod",
     "start": "npm run watch:eleventy & npm run watch:sass"
@@ -21,6 +19,7 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "cross-env": "^7.0.3",
     "sass": "^1.83.4"
   }
 }
