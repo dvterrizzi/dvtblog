@@ -28,6 +28,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - name: Build (11ty + scss)
+      run: npm run build:prod
+
     - name: Upload static files as artifact
       uses: actions/upload-pages-artifact@v3
       with:
